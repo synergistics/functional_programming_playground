@@ -1,6 +1,7 @@
 (load "lib/curry.scm")
 
-; NOTE: These combinators may be arbitrarily named 
+; NOTE: These combinators may not correspond with the ones that actually have these names
+; No promises :D
 
 (define K
   (curry 

@@ -2,13 +2,7 @@
 ; These are modified and just for fun
 
 (load "lib/curry.scm")
-
-(define-syntax defer 
-  (syntax-rules ()
-    ((defer x)
-     (lambda () x))))
-
-(define (now dx) (dx))
+(load "lib/lazy.scm")
 
 ;(define (zero x)
   ;x)
@@ -66,11 +60,21 @@
     (lambda (m n f x) (((n m) f) x))
     4))
 
-(define (num n)
+(define (cnum n)
   (letrec
     ((aux
        (lambda (n acc)
          (if (zero? n)
            acc
            (aux (- n 1) (succ acc))))))
-     (aux n zero)))
+     (aux n zero))
+
+(define (num cn)
+  (letrec
+    ((aux
+       (lambda (n acc)
+         (if (zero? n)
+           acc
+           (aux (- n 1) (succ acc))))))
+     (aux n zero))
+
