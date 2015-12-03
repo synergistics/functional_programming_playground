@@ -13,7 +13,7 @@
     (newton-root-aux (improve guess x) x f improve)))
 
 (define (newton-root x f improve)
-  (newton-root-aux  x f improve))
+  (newton-root-aux 1 x f improve))
 
 (define (make-root-func nth)
   (lambda (x) 
