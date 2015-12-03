@@ -3,3 +3,4 @@
     ((defer x)
      (lambda () x))))
 
+(define (now dx) (dx))

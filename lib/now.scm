@@ -1,1 +1,0 @@
-(define (now dx) (dx))
