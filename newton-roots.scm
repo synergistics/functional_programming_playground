@@ -26,5 +26,7 @@
 (define root-3 (make-root-func 3))
 
 ;Takes a while, really inefficient
+;Maybe improved by averaging a root of guess itself with an approximation instead of guess alone
+;i.e. average (root-2 guess) ...
 (define root-4 (make-root-func 4))
 
