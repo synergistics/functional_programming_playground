@@ -25,3 +25,13 @@
 (define (foldy-length xs)
   (foldl (lambda (x ys) (+ 1 ys)) 0 xs))
 
+
+(define (foldy-all p xs)
+  (foldl (lambda (x ys) (and x ys)) 
+         #t 
+         (map p xs)))
+
+(define (foldy-any p xs)
+  (foldl (lambda (x ys) (or x ys)) 
+         #f 
+         (map p xs)))
